@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher_foreground"
+                app:tint="@color/text_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Edit Profile"
+                android:textColor="@color/text_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Save"
+                android:textColor="@color/primary_orange"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Profile Photo Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="16dp"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:id="@+id/profile_photo_container"
+                android:layout_width="100dp"
+                android:layout_height="100dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/edit_profile_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:shapeAppearanceOverlay="@style/CircleImage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@color/white"
+                    android:elevation="2dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:tint="@color/black" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wanjiku M."
+                    android:textColor="@color/text_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wanjiku.m@gmail.com"
+                    android:textColor="@color/text_grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+254 712 345 678"
+                    android:textColor="@color/text_grey"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Tap the photo to change your profile picture"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+        <!-- Personal Information Section -->
+        <TextView
+            style="@style/EditProfileSectionHeader"
+            android:text="Personal Information" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <include android:id="@+id/row_full_name" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_email" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_phone" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_dob" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_gender" layout="@layout/item_edit_profile_row" />
+        </LinearLayout>
+
+        <!-- Address Section -->
+        <TextView
+            style="@style/EditProfileSectionHeader"
+            android:text="Address" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <include android:id="@+id/row_default_address" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_manage_addresses" layout="@layout/item_edit_profile_row" />
+        </LinearLayout>
+
+        <!-- Account & Security Section -->
+        <TextView
+            style="@style/EditProfileSectionHeader"
+            android:text="Account &amp; Security" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <include android:id="@+id/row_change_password" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_2fa" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_biometric" layout="@layout/item_edit_profile_row" />
+        </LinearLayout>
+
+        <!-- Preferences Section -->
+        <TextView
+            style="@style/EditProfileSectionHeader"
+            android:text="Preferences" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <include android:id="@+id/row_notifications" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_language" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_currency" layout="@layout/item_edit_profile_row" />
+            <View style="@style/Divider" />
+            <include android:id="@+id/row_size" layout="@layout/item_edit_profile_row" />
+        </LinearLayout>
+
+        <!-- Logout -->
+        <TextView
+            android:id="@+id/btn_logout_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="Logout"
+            android:textColor="#F44336"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
